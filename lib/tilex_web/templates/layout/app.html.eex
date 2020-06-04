@@ -32,7 +32,7 @@
     <meta name="twitter:site" content="@<%= Application.get_env(:tilex, :default_twitter_handle)%>">
     <meta name="twitter:title" content="<%= twitter_title(assigns[:post]) %>">
 
-    <link href='//fonts.googleapis.com/css?family=Raleway:700,900&display=swap' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.typekit.net/wdg3pkv.css">
     <link rel="alternate feed" type="application/rss+xml" title="Today I Learned" href="<%= feed_path(@conn, :index) %>">
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
@@ -63,17 +63,9 @@
     <% end %>
 
     <header class="site_head <%= if System.get_env("BANNER"), do: "has-banner" %>">
-      <%= if (System.get_env("BANNER")) do %>
-        <div class="banner">
-          <div class="message">
-            Hashrocket is hosting a <strong>Ruby</strong>, <strong>Rails</strong>, and <strong>React</strong> conference. Buy your tickets for <a href="https://www.ancientcityruby.com/">ACR</a> today!
-          </div>
-        </div>
-      <% end %>
       <div>
         <h1><%= link("Today I Learned", to: post_path(@conn, :index)) %></h1>
         <h2>
-          <a href="https://hashrocket.com" class="hr">A Hashrocket project</a>
           <span>
             <a href="https://twitter.com/<%= Application.get_env(:tilex, :default_twitter_handle)%>" class="twitter">Follow on Twitter</a>
           </span>
@@ -104,31 +96,5 @@
     </script>
 
     <script src="<%= static_url(@conn, "/js/app.js") %>"></script>
-
-    <%= if ga_identifier() do %>
-      <script>
-        (function(i, s, o, g, r, a, m) {
-          i['GoogleAnalyticsObject'] = r;
-          (i[r] =
-            i[r] ||
-            function() {
-              (i[r].q = i[r].q || []).push(arguments);
-            }), (i[r].l = 1 * new Date());
-          (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-          a.async = 1;
-          a.src = g;
-          m.parentNode.insertBefore(a, m);
-        })(
-          window,
-          document,
-          'script',
-          'https://www.google-analytics.com/analytics.js',
-          'ga'
-        );
-
-        ga('create', '<%= ga_identifier() %>', 'auto');
-        ga('send', 'pageview');
-      </script>
-    <% end %>
   </body>
 </html>

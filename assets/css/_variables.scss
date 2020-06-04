@@ -1,8 +1,8 @@
-$primary-typeface: "Lora", "Helvetica Neue", Helvetica, sans-serif;
-$secondary-typeface: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+$primary-typeface: sofia-pro, "Lora", "Helvetica Neue", Helvetica, sans-serif;
+$secondary-typeface: sofia-pro, "Helvetica Neue", Helvetica, sans-serif;
 $news-typeface: "Limelight", sans-serif;
 
-$light: #d5e9f5;
+$light: #ffffff;
 $med: #92c4d1;
 $dark: #414347;
 
@@ -12,13 +12,14 @@ $purple: #7b185d;
 $pink: #ee7567;
 $green: #008800;
 $blue: #007dae;
+$violet: #6927ff;
 
 $twitter-color: #006da3;
 $github-color: #4b4b4b;
 
 $base: $dark;
 $bg: $light;
-$accent: $navy;
+$accent: $violet;
 $error: $red;
 
 $colors: (

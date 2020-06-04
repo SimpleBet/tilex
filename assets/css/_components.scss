@@ -28,7 +28,7 @@
 
 a {
   text-decoration: none;
-  color: $red;
+  color: $violet;
 }
 
 .sticker {
@@ -105,8 +105,7 @@ nav.pagination {
   section {
     flex: 0 1 auto;
     box-sizing: border-box;
-    min-width: 35rem;
-    max-width: 60%;
+    width: 60%;
 
     @include box-outline;
     @include mobile {
@@ -126,7 +125,7 @@ nav.pagination {
         transition: color 0.1s;
 
         &:hover {
-          color: $red;
+          color: $violet;
         }
       }
     }
@@ -415,7 +414,7 @@ form {
     &:active,
     &:focus,
     &:hover {
-      background: $red;
+      background: $violet;
       outline: none;
     }
   }

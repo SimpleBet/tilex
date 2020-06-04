@@ -54,7 +54,7 @@ header.site_head {
     display: block;
     font-family: $secondary-typeface;
     text-transform: uppercase;
-    color: $navy;
+    color: $violet;
     letter-spacing: 0.1em;
     font-weight: 900;
     font-size: 7vw;
@@ -179,7 +179,7 @@ header.site_head {
         .site_nav__toggle {
           width: auto;
           opacity: 1;
-          box-shadow: 0 0 3rem transparentize($navy, 0.8);
+          box-shadow: 0 0 3rem transparentize($violet, 0.8);
         }
       }
     }
@@ -432,7 +432,7 @@ header.page_head {
     @include responsive(font-size, 3rem, 2rem);
 
     margin-bottom: 1em;
-    color: $navy;
+    color: $violet;
   }
 
   a.author_twitter {
