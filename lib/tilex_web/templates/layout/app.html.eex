@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-      <%= page_title(assigns) %> - Today I Learned
+      <%= page_title(assigns) %> Simplebet - Today I Learned
     </title>
 
     <% description = "TIL is an open-source project by Hashrocket that exists to catalogue the sharing & accumulation of knowledge as it happens day-to-day." %>
@@ -23,7 +23,7 @@
     <meta property="og:description" content="<%= description %>">
     <meta property="og:title" content="Today I Learned">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://til.hashrocket.com">
+    <meta property="og:url" content="https://til.simplebet.io">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@<%= Application.get_env(:tilex, :default_twitter_handle)%>">

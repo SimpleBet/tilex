@@ -80,8 +80,8 @@
       }
       header.site_head a {
         display: block;
-        font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
-        text-transform: uppercase;
+        font-family: sofia-pro, 'Helvetica Neue', Helvetica, sans-serif;
+        text-transform: lowercase;
         color: #082736;
         letter-spacing: 0.1em;
         font-weight: 900;
