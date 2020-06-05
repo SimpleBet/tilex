@@ -83,15 +83,13 @@ header.site_head {
 
       &.hr {
         color: $red;
-        background: left 55% no-repeat url("/images/hashrocket-logo.png");
-        background-size: 1.8rem auto;
       }
 
       &.twitter {
         color: $twitter-color;
         background: svg-url(twitter, $twitter-color) center left no-repeat;
         background-size: 1.7rem auto;
-        margin: 0 0 0 1rem;
+        margin: 1rem 0 0 1rem;
       }
     }
   }
@@ -372,11 +370,10 @@ header.site_head {
   font-size: 0.8em;
   text-align: center;
   z-index: 999;
+  background-color: $med;
 
   ul {
     display: inline-block;
-
-    @include box-outline;
 
     border-top: none;
 

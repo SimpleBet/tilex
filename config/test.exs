@@ -17,6 +17,7 @@ config :tilex, Tilex.Repo,
   database: "tilex_test",
   hostname: "localhost",
   username: "postgres",
+  password: "postgres",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 50,
   timeout: 30_000
