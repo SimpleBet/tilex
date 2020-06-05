@@ -21,7 +21,7 @@ static_url =
 config :tilex, TilexWeb.Endpoint,
   instrumenters: [Appsignal.Phoenix.Instrumenter],
   http: [port: {:system, "PORT"}, compress: true],
-  url: [host: System.get_env("HOST"), port: 80],
+  url: [host: "https://simplebet-tilex.herokuapp.com", port: 443, scheme: "https"],
   cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   static_url: static_url
