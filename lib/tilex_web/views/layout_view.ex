@@ -7,10 +7,6 @@ defmodule TilexWeb.LayoutView do
     Guardian.Plug.current_resource(conn)
   end
 
-  def ga_identifier do
-    Application.get_env(:tilex, :ga_identifier)
-  end
-
   def imgur_api_key(conn) do
     current_user(conn) && Application.get_env(:tilex, :imgur_client_id)
   end

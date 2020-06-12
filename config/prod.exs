@@ -19,15 +19,14 @@ static_url =
   |> Map.from_struct()
 
 config :tilex, TilexWeb.Endpoint,
-  instrumenters: [Appsignal.Phoenix.Instrumenter],
   http: [port: {:system, "PORT"}, compress: true],
-  url: [host: "https://simplebet-tilex.herokuapp.com", port: 443, scheme: "https"],
+  url: [host: "simplebet-tilex.herokuapp.com", port: 443, scheme: "https"],
   cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   static_url: static_url
 
 # Do not print debug messages in production
-config :logger, level: :info
+config :logger, level: :debug
 
 config :tilex, Tilex.Repo,
   adapter: Ecto.Adapters.Postgres,
@@ -81,9 +80,6 @@ if System.get_env("ENABLE_BASIC_AUTH") do
 end
 
 config :tilex, :page_size, 50
-config :tilex, :ga_identifier, System.get_env("GA_IDENTIFIER")
-
-config :appsignal, :config, active: true
 
 config :tilex, :page_size, 50
 config :tilex, :request_tracking, System.get_env("REQUEST_TRACKING")

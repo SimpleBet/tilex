@@ -1,6 +1,7 @@
 defmodule TilexWeb.UserSocket do
   use Phoenix.Socket
 
+  transport(:websocket, Phoenix.Transports.WebSocket, timeout: 45_000)
   ## Channels
   channel("post:search", Tilex.PostChannel)
   channel("text_converter", Tilex.TextConverterChannel)
