@@ -3,6 +3,3 @@ if [ -f "$assets_dir/yarn.lock" ]; then
 else
   npm run deploy
 fi
-
-cd $phoenix_dir
-mix phx.digest
