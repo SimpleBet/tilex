@@ -14,7 +14,7 @@ import Config
 static_url =
   System.get_env("EDGE_URL")
   |> Kernel.||(System.get_env("HOST"))
-  |> Kernel.||("https://simplebet-tilex.herokuapp.com/assets")
+  |> Kernel.||("https://simplebet-tilex.herokuapp.com")
   |> URI.parse()
   |> Map.from_struct()
 
