@@ -3,34 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>
-      <%= page_title(assigns) %> Simplebet - Today I Learned
+      Simplebet - Today I Learned
     </title>
-
-    <% description = "TIL is an open-source project by Simplebet that exists to catalogue the sharing & accumulation of knowledge as it happens day-to-day." %>
-    <% image = twitter_image_url(assigns[:post]) %>
-
-    <meta itemprop="name" content="Today I Learned">
-    <meta itemprop="brand" content="Today I Learned">
-    <meta itemprop="description" content="<%= description %>">
-
-    <meta name="author" content="<%= Application.get_env(:tilex, :organization_name)%>">
-    <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
-    <meta name="description" content="<%= description %>">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="image" property="og:image" content="<%= image %>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta property="og:description" content="<%= description %>">
-    <meta property="og:title" content="Today I Learned">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://til.simplebet.io">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@<%= Application.get_env(:tilex, :default_twitter_handle)%>">
-    <meta name="twitter:description" content="<%= twitter_description(assigns[:post]) %>">
-    <meta name="twitter:image" content="<%= image %>">
-    <meta name="twitter:site" content="@<%= Application.get_env(:tilex, :default_twitter_handle)%>">
-    <meta name="twitter:title" content="<%= twitter_title(assigns[:post]) %>">
 
     <link rel="stylesheet" href="https://use.typekit.net/wdg3pkv.css">
     <link rel="alternate feed" type="application/rss+xml" title="Today I Learned" href="<%= feed_path(@conn, :index) %>">
@@ -45,22 +19,9 @@
     <% end %>
     <link rel="manifest" href="<%= web_manifest_path(@conn, :index) %>">
 
-    <%= if request_tracking() do %>
-      <script async src="<%= pixel_path(@conn, :index) %>"></script>
-    <% end %>
   </head>
 
   <body>
-    <%= if developer = current_user(@conn) do %>
-      <nav class="admin_panel">
-        <ul>
-          <li> <%= link(developer.username, to: developer_path(@conn, :show, developer)) %> </li>
-          <li> <%= link("Sign Out", to: auth_path(@conn, :delete), method: :delete) %> </li>
-          <li> <%= link("Create Post", to: post_path(@conn, :new)) %> </li>
-          <li> <%= link("Profile", to: developer_path(@conn, :edit)) %> </li>
-        </ul>
-      </nav>
-    <% end %>
 
     <header class="site_head <%= if System.get_env("BANNER"), do: "has-banner" %>">
       <div>
@@ -76,16 +37,6 @@
     <main>
       <h1>500</h1>
     </main>
-
-    <%= render "site_nav.html", conn: @conn %>
-
-    <script>
-      window.Tilex = window.Tilex || {};
-      window.Tilex.clientConfig = {
-        editor: '<%= editor_preference(@conn) %>',
-        imgurApiKey: '<%= imgur_api_key(@conn) %>',
-      };
-    </script>
 
     <script src="<%= static_url(@conn, "/js/app.js") %>"></script>
   </body>
