@@ -14,7 +14,7 @@ import Config
 static_url =
   System.get_env("EDGE_URL")
   |> Kernel.||(System.get_env("HOST"))
-  |> Kernel.||("/priv/static/")
+  |> Kernel.||("/priv/static")
   |> URI.parse()
   |> Map.from_struct()
 
