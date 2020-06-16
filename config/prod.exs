@@ -14,7 +14,7 @@ import Config
 static_url =
   System.get_env("EDGE_URL")
   |> Kernel.||(System.get_env("HOST"))
-  |> Kernel.||("/priv/static")
+  |> Kernel.||("https://simplebet-tilex.herokuapp.com/assets")
   |> URI.parse()
   |> Map.from_struct()
 
@@ -23,7 +23,7 @@ config :tilex, TilexWeb.Endpoint,
   url: [host: "simplebet-tilex.herokuapp.com", port: 443, scheme: "https"],
   cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
-  static_url: ""
+  static_url: static_url
 
 # Do not print debug messages in production
 config :logger, level: :debug
