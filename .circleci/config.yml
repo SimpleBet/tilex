@@ -21,7 +21,6 @@ jobs:
       - run: MIX_ENV=test mix ecto.migrate
       - run: cd assets && npm install
       - run: cd assets && node node_modules/webpack/bin/webpack.js --mode production
-      - run: mix phx.digest
       - run: mix format --check-formatted
       - run: mix credo
       - run:
