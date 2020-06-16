@@ -4,5 +4,3 @@ else
   npm run deploy
 fi
 
-cd $phoenix_dir
-mix "phx.digest"

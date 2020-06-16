@@ -24,7 +24,7 @@ defmodule TilexWeb.Endpoint do
   plug(Plug.Static,
     at: "/",
     from: :tilex,
-    gzip: true,
+    gzip: false,
     headers: [{"access-control-allow-origin", "*"}],
     only: ~w(
       assets
