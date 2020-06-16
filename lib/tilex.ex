@@ -18,7 +18,6 @@ defmodule Tilex do
       supervisor(Tilex.Notifications.NotifiersSupervisor, [])
     ]
 
-    Logger.info({System.get_env("EDGE_URL"), System.get_env("HOST")})
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Tilex.Supervisor]
