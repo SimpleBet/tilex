@@ -57,4 +57,8 @@ defmodule TilexWeb.LayoutView do
   def request_tracking() do
     @request_tracking
   end
+
+  def sb_logo_url do
+    TilexWeb.Endpoint.static_url() <> "/images/sb-logo.svg"
+  end
 end

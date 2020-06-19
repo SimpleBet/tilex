@@ -48,6 +48,14 @@ header.site_head {
   div {
     display: inline-block;
     position: relative;
+    width: 60%;
+  }
+
+  h1 {
+    img {
+      width: 6vw;
+      float: left;
+    }
   }
 
   a {
@@ -57,7 +65,7 @@ header.site_head {
     color: $violet;
     letter-spacing: 0.1em;
     font-weight: 900;
-    font-size: 7vw;
+    font-size: 5vw;
     line-height: 1;
   }
 

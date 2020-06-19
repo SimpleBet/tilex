@@ -64,7 +64,7 @@
 
     <header class="site_head <%= if System.get_env("BANNER"), do: "has-banner" %>">
       <div>
-        <h1><%= link("Today I Learned", to: post_path(@conn, :index)) %></h1>
+        <h1><img src="<%= sb_logo_url() %>" title="Simplebet" alt="sb logo"/><%= link("Today I Learned", to: post_path(@conn, :index)) %></h1>
         <h2>
           <span>
             <a href="https://twitter.com/<%= Application.get_env(:tilex, :default_twitter_handle)%>" class="twitter"> </a>
