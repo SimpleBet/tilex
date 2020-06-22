@@ -14,13 +14,13 @@ import Config
 static_url =
   System.get_env("EDGE_URL")
   |> Kernel.||(System.get_env("HOST"))
-  |> Kernel.||("https://simplebet-tilex.herokuapp.com")
+  |> Kernel.||("https://til.simplebet.io")
   |> URI.parse()
   |> Map.from_struct()
 
 config :tilex, TilexWeb.Endpoint,
   http: [port: {:system, "PORT"}, compress: true],
-  url: [host: "simplebet-tilex.herokuapp.com", port: 443, scheme: "https"],
+  url: [host: "til.simplebet.io", port: 443, scheme: "https"],
   cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   static_url: static_url
