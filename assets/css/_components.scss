@@ -111,6 +111,7 @@ nav.pagination {
     @include mobile {
       max-width: none;
       min-width: 0;
+      width: 100%;
     }
   }
 
