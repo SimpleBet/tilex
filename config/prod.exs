@@ -14,13 +14,14 @@ import Config
 static_url =
   System.get_env("EDGE_URL")
   |> Kernel.||(System.get_env("HOST"))
-  |> Kernel.||("https://simplebet-tilex.herokuapp.com")
+  |> Kernel.||("https://til.simplebet.io")
   |> URI.parse()
   |> Map.from_struct()
 
 config :tilex, TilexWeb.Endpoint,
   http: [port: {:system, "PORT"}, compress: true],
-  url: [host: "simplebet-tilex.herokuapp.com", port: 443, scheme: "https"],
+  force_ssl: [rewrite_on: [:x_forwarded_proto], host: nil],
+  url: [host: "til.simplebet.io", port: 443, scheme: "https"],
   cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   static_url: static_url
@@ -52,7 +53,6 @@ config :tilex, Tilex.Repo,
 #
 # We also recommend setting `force_ssl`, ensuring no data is
 # ever sent via http, always redirecting to https:
-config :tilex, TilexWeb.Endpoint, force_ssl: [rewrite_on: [:x_forwarded_proto]]
 
 # Check `Plug.SSL` for all available options in `force_ssl`.
 
@@ -72,7 +72,7 @@ config :tilex, TilexWeb.Endpoint, force_ssl: [rewrite_on: [:x_forwarded_proto]]
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 
-if System.get_env("ENABLE_BASIC_AUTH") do
+if(System.get_env("ENABLE_BASIC_AUTH")) do
   config :tilex, :basic_auth,
     realm: "tilex",
     username: System.get_env("BASIC_AUTH_USERNAME"),
