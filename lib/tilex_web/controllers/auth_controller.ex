@@ -1,5 +1,7 @@
 defmodule TilexWeb.AuthController do
   use TilexWeb, :controller
+  require Logger
+
   plug(Ueberauth)
 
   alias Tilex.{Developer, Repo, Auth}
@@ -42,7 +44,10 @@ defmodule TilexWeb.AuthController do
         Developer.find_or_create(Repo, attrs)
 
       _ ->
-        {:error, "#{email} is not a valid email address"}
+        message = "#{email} is not an authorized email address"
+        Logger.error(message)
+
+        {:error, message}
     end
   end
 
